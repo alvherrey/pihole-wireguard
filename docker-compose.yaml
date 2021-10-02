@@ -11,8 +11,9 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Madrid
+      - SERVERURL=alvherrey.duckdns.org
       - SERVERPORT=51820 #optional
-      - PEERS=2 #optional
+      - PEERS=1 #optional
       - PEERDNS=auto #optional
       - INTERNAL_SUBNET=10.13.13.0 #optional
     volumes:
@@ -23,12 +24,12 @@ services:
       - 51820:51820/udp
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
-    dns:
-      - 172.20.0.7
+#    dns:
+#      - 172.20.0.7
     restart: unless-stopped
-    networks:
-      containers:
-        ipv4_address: 172.20.0.6
+#    networks:
+#      containers:
+#        ipv4_address: 172.20.0.6
 
   pihole:
     container_name: pihole
@@ -48,12 +49,12 @@ services:
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
-    networks:
-      containers:
-        ipv4_address: 172.20.0.7
+#    networks:
+#      containers:
+#        ipv4_address: 172.20.0.7
 
-networks:
-  containers:
-    ipam:
-      config:
-        - subnet: 172.20.0.0/24
+#networks:
+#  containers:
+#    ipam:
+#      config:
+#        - subnet: 172.20.0.0/24
