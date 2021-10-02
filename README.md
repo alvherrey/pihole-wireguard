@@ -1,2 +1,2 @@
 # pihole-wireguard
-Proyecto que integra Pihole con Wireguard
+Integrates Pihole with Wireguard
