@@ -11,3 +11,10 @@ systemctl disable systemd-resolved.service
 systemctl stop systemd-resolved
 ```
 
+Obtain peer QR from wireguard container (number depends on number of peers availabes)
+```
+docker exec -it wireguard wg
+docker exec -it wireguard /app/show-peer 1
+```
+Obtain peer config from wireguard container (number depends on number of peers availabes)
+cat /opt/wireguard/config/peer1/peer1.conf
