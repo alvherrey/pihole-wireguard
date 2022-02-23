@@ -17,4 +17,6 @@ docker exec -it wireguard wg
 docker exec -it wireguard /app/show-peer 1
 ```
 Obtain peer config from wireguard container (number depends on number of peers availabes)
+```
 cat /opt/wireguard/config/peer1/peer1.conf
+```
